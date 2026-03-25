@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
@@ -13,28 +15,61 @@
   --color-on-surface: #111827;
   --color-on-surface-variant: #6b7280;
   --color-outline-variant: #e5e7eb;
-}
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+  --breakpoint-xs: 420px;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable;
   }
-  
+
   body {
-    @apply font-body bg-white text-slate-900;
+    font-family: var(--font-body);
+    background-color: #ffffff;
+    color: #111827;
+    overflow-x: hidden;
+    min-height: 100svh;
   }
 
   ::selection {
-    @apply bg-primary/15 text-primary;
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    color: var(--color-primary);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
 @layer utilities {
   .safe-area-inset-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-area-inset-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
