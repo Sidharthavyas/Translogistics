@@ -358,7 +358,7 @@ export default function App() {
             {[
               { value: 17, suffix: "+", label: "Years" },
               { value: 28, suffix: "+", label: "States" },
-              { value: 100, suffix: "+", label: "Loads / Mo" },
+              { value: 50, suffix: "+", label: "Monthly Loads" },
             ].map((stat, idx) => (
               <div key={idx} className="text-left">
                 <div className="text-xl xs:text-2xl sm:text-2xl lg:text-3xl font-headline font-bold text-white">
